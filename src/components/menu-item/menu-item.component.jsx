@@ -6,7 +6,7 @@ const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
   let navigate = useNavigate();
 
   function handleClick() {
-    navigate(`/${linkUrl}`);
+    navigate(`${linkUrl}`);
   }
 
   return (
