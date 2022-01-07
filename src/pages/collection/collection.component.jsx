@@ -1,38 +1,37 @@
-import React from "react";
-import { connect } from "react-redux";
-import { useParams } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-import CollectionItem from "../../components/collection-item/collection-item.component";
+import CollectionItem from '../../components/collection-item/collection-item.component';
 
-import "./collection.styles.scss";
-import { selectCollectionForPreview } from "../../redux/shop/shop.selector";
-import { createStructuredSelector } from "reselect";
+import './collection.styles.scss';
+import { selectCollectionForPreview } from '../../redux/shop/shop.selector';
+import { createStructuredSelector } from 'reselect';
 
 const CollectionPage = ({ collections }) => {
   const params = useParams();
   const sectionName = params.collectionId;
 
   function choosingItemsOfSection() {
-    const sectionName = params.collectionId;
     switch (sectionName) {
-      case "womens":
+      case 'womens':
         return collections[0].items;
-      case "mens":
+      case 'mens':
         return collections[1].items;
-      case "hats":
+      case 'hats':
         return collections[2].items;
-      case "jackets":
+      case 'jackets':
         return collections[4].items;
-      case "sneakers":
+      case 'sneakers':
         return collections[3].items;
       default:
         break;
     }
   }
   return (
-    <div className="collection-page">
-      <h2 className="title">{sectionName.toUpperCase()}</h2>
-      <div className="items">
+    <div className='collection-page'>
+      <h2 className='title'>{sectionName.toUpperCase()}</h2>
+      <div className='items'>
         {choosingItemsOfSection().map((item) => (
           <CollectionItem key={item.id} item={item} />
         ))}
