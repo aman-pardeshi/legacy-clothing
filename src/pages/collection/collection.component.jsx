@@ -17,9 +17,9 @@ const CollectionPage = ({ collections }) => {
       case 'womens':
         return collections[0].items;
       case 'mens':
-        return collections[1].items;
-      case 'hats':
         return collections[2].items;
+      case 'hats':
+        return collections[1].items;
       case 'jackets':
         return collections[4].items;
       case 'sneakers':
